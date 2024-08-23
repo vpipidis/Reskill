@@ -7,28 +7,35 @@ function Header() {
   return (
     <>
     <header>
-    <nav className='header'>
+    <nav className=''>
 
     <div>
-      <div className='container relative inline-flex items-center justify-center p4'>
-        <div className='inline float-left mr-4 my-2 h-24'><h3>
-          Page Title
+      <div className='flex flex-row justify-between'>
+        <div className='flex flex-col mx-16 mt-16 gap-6 font-bold'><h3>
+        Site Name  
         </h3></div>
-       <div>
-        <button className='inline float-right mr-4 my-2 h-24'>
+       <div className='flex flex-col '>
+        <ul className='flex  items-center'>
+        <li>
+        <button className='font-semibold m-5'>
           Page
-       </button></div>
-       <div>
-        <button className='page-link'>
+       </button></li>
+       <li>
+
+        <button className='font-semibold m-5'>
           Page
-       </button></div>
-        <div>
-        <button className='page-link'>
+       </button></li>
+       <li>
+
+        <button className='font-semibold m-5'>
           Page
-        </button></div>
-        <div><button className='button' onClick={() => setCount((count) => count + 1)}>
+        </button></li>
+        <li>
+
+        <button className='m-5' onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button></div>
+        </button></li>
+        </ul></div>
         </div>
       </div>
      </nav>
