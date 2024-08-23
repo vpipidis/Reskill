@@ -1,9 +1,8 @@
 
-import './Footer.css'
-import facebook from './assets/facebookIcon.svg'
-import instagram from './assets/instaIcon.svg'
-import linkedin from './assets/linkedinIcon.svg'
-import youtube from './assets/ytIcon.svg'
+import facebook from '../assets/facebookIcon.svg'
+import instagram from '../assets/instaIcon.svg'
+import linkedin from '../assets/linkedinIcon.svg'
+import youtube from '../assets/ytIcon.svg'
 
 function Footer() {
 

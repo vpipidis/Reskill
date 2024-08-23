@@ -1,37 +1,38 @@
 import { useState } from 'react'
 
-import './Header.css'
 
 function Header() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <header>
     <nav className='header'>
 
-    <table>
-    <tr>
-      <th><h3>
+    <div>
+      <div className='container relative inline-flex items-center justify-center p4'>
+        <div className='inline float-left mr-4 my-2 h-24'><h3>
           Page Title
-        </h3></th>
-      <th>
+        </h3></div>
+       <div>
+        <button className='inline float-right mr-4 my-2 h-24'>
+          Page
+       </button></div>
+       <div>
         <button className='page-link'>
           Page
-       </button></th>
-       <th>
+       </button></div>
+        <div>
         <button className='page-link'>
           Page
-       </button></th>
-       <th>
-        <button className='page-link'>
-          Page
-       </button></th>
-      <th><button className='button' onClick={() => setCount((count) => count + 1)}>
+        </button></div>
+        <div><button className='button' onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button></th>
-    </tr>
-  </table>
+        </button></div>
+        </div>
+      </div>
      </nav>
+     </header>
     </>
   )
 }
