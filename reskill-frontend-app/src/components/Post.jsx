@@ -5,7 +5,7 @@ import axios from "axios";
 function Post() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState(null);
   useEffect(() => {
     const apiUrl = `https://jsonplaceholder.typicode.com/posts/${id}`
     const data = axios.get(apiUrl)
@@ -21,7 +21,7 @@ function Post() {
 
   })
 
-  const [photo, setPhoto] = useState([]);
+  const [photo, setPhoto] = useState(null);
   useEffect(() => {
     const dataphotos = axios.get(`https://jsonplaceholder.typicode.com/photos/${id}`)
       .then(response => {
@@ -41,6 +41,7 @@ function Post() {
     <>
       <div className='m-16 grid grid-cols-2'>
         {loading ? <h1>Loading...</h1> :
+        (post==null)?<h1>Invalid Post</h1>:
           <>
             <div>
               <h1 className="text-4xl font-bold">{post.title}</h1>
