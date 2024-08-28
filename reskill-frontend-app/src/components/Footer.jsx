@@ -10,7 +10,7 @@ function Footer() {
     <div className='m-16'>
     <div className='grid grid-cols-2 justify-between'>
       <div className='text-lg font-bold'>
-        <h5 className='mb-16'>Site Name</h5>
+        <h5 className='mb-16'>Web Reskill</h5>
 
         <div className='grid grid-cols-4 w-1/3 h-10 py-2 gap-x-3'>
             <a href='https://www.facebook.com' target="_blank">

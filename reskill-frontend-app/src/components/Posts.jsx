@@ -7,7 +7,7 @@ function Posts({ isHome = false }) {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    const apiUrl=isHome?'https://jsonplaceholder.typicode.com/posts?_limit=9':'https://jsonplaceholder.typicode.com/posts'
+    const apiUrl=isHome?'https://jsonplaceholder.typicode.com/posts?_limit=12':'https://jsonplaceholder.typicode.com/posts'
     const data = axios.get(apiUrl)
       .then(response => {
         console.log(data, posts);
@@ -20,6 +20,8 @@ function Posts({ isHome = false }) {
       });
 
   })
+
+   const postsSliced=isHome?posts.slice(3,12):posts;
 
   const [photos, setPhotos] = useState([]);
   useEffect(() => {
@@ -44,7 +46,7 @@ function Posts({ isHome = false }) {
         <div className='grid grid-cols-3'>
           {loading ? (<h1>Loading...</h1>): (
           <>
-            {posts.map((post => (
+            {postsSliced.map((post => (
 
               <div className='' key={post.id} >
                 <a href='/' target="_blank">

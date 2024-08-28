@@ -12,8 +12,7 @@ function Header() {
     <div>
       <div className='flex flex-row justify-between'>
         <div className='flex flex-col mx-16 mt-16 gap-6 font-bold'><h3>
-        Site Name  
-        </h3></div>
+        Web Reskill        </h3></div>
        <div className='flex flex-col '>
         <ul className='flex  items-center'>
         <li>
