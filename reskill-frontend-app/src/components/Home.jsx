@@ -41,7 +41,7 @@ function Home() {
       <div>
         <div>
           <h2 className='text-4xl font-bold'>Related Articles or posts</h2>
-          <Posts />
+          <Posts isHome={true} />
 
         </div>
       </div>
