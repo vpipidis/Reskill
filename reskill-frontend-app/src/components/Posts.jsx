@@ -48,7 +48,7 @@ function Posts({ isHome = false }) {
 
               <div className='' key={post.id} >
                 <a href='/' target="_blank">
-                  <img src={photos[post.id].thumbnailUrl} className="justify-self-center w-full p-2" alt={photos[post.id].title} />
+                  <img src={photos[post.id-1].thumbnailUrl} className="justify-self-center w-full p-2" alt={photos[post.id].title} />
                 </a>
                 <h3 className='font-bold'>
                   {post.title}
