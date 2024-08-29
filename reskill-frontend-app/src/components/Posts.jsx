@@ -50,7 +50,7 @@ function Posts({ isHome = false }) {
             {postsSliced.map((post => (
 
               <div className='' key={post.id} >
-                <NavLink to={'post/'+post.id} target="_blank">
+                <NavLink to={'/post/'+post.id} target="_blank">
                   <img src={photos[post.id-1].thumbnailUrl} className="justify-self-center w-full p-2" alt={photos[post.id].title} />
                 </NavLink>
                 <h3 className='font-bold'>
