@@ -8,7 +8,7 @@ function Posts({ isHome = false }) {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    const apiUrl=isHome?'https://jsonplaceholder.typicode.com/posts?_limit=12':'https://jsonplaceholder.typicode.com/posts'
+    const apiUrl=isHome?'http://localhost:3000/posts?_limit=12':'http://localhost:3000/posts'
     const data = axios.get(apiUrl)
       .then(response => {
         console.log(data, posts);
@@ -18,27 +18,13 @@ function Posts({ isHome = false }) {
       .catch(function (error) {
         // handle error
         console.log(error);
-      });
+      })      .finally(() => { setLoading(false); }
+    );
 
   })
 
    const postsSliced=isHome?posts.slice(3,12):posts;
 
-  const [photos, setPhotos] = useState([]);
-  useEffect(() => {
-    const dataphotos = axios.get('https://jsonplaceholder.typicode.com/photos')
-      .then(response => {
-        console.log(dataphotos, photos);
-        setPhotos(response.data);
-        // handle success
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(() => { setLoading(false); }
-      );
-  })
 
 
   return (
@@ -51,7 +37,7 @@ function Posts({ isHome = false }) {
 
               <div className='' key={post.id} >
                 <NavLink to={'/post/'+post.id} target="_blank">
-                  <img src={photos[post.id-1].thumbnailUrl} className="justify-self-center w-full p-2" alt={photos[post.id].title} />
+                  <img src={post.thumbnailUrl} className="justify-self-center w-full p-2" alt={post.title} />
                 </NavLink>
                 <h3 className='font-bold'>
                   {post.title}

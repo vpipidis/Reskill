@@ -8,7 +8,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    const apiUrl='https://jsonplaceholder.typicode.com/posts?_limit=3';
+    const apiUrl='http://localhost:3000/posts?_limit=3';
     const data = axios.get(apiUrl)
       .then(response => {
         console.log(data, posts);
@@ -17,26 +17,11 @@ function Home() {
       })
       .catch(function (error) {
         // handle error
+        
         console.log(error);
-      });
+      }).finally(() => { setLoading(false); }
+    );
 
-  })
-
-
-  const [photos, setPhotos] = useState([]);
-  useEffect(() => {
-    const dataphotos = axios.get('https://jsonplaceholder.typicode.com/photos')
-      .then(response => {
-        console.log(dataphotos, photos);
-        setPhotos(response.data);
-        // handle success
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(() => { setLoading(false); }
-      );
   })
 
 
@@ -50,7 +35,7 @@ function Home() {
       </div>  
       <div className=' flex w-full  justify-center items-center ' >
         <NavLink to='/post/1' target="_blank">
-          <img src={photos[0].url} className="" alt={photos[0].title}/>
+          <img src={posts[0].url} className="" alt={posts[0].title}/>
         </NavLink>
       </div>
       <div className=" flex w-full  justify-center items-center py-16">
@@ -61,11 +46,11 @@ function Home() {
       <div className='grid grid-cols-2 gap-x-4	'>
       <NavLink to='/post/2' target="_blank">
 
-        <img src={photos[1].url}className=" mx-4" alt={photos[1].title} />
+        <img src={posts[1].url}className=" mx-4" alt={posts[1].title} />
         </NavLink>
         <NavLink to='/post/2' target="_blank">
 
-        <img src={photos[2].url} className="mx-4" alt={photos[2].title} />
+        <img src={posts[2].url} className="mx-4" alt={posts[2].title} />
         </NavLink>
       </div>
 

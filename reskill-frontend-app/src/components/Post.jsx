@@ -7,39 +7,25 @@ function Post() {
   const [loading, setLoading] = useState(true);
   const [post, setPost] = useState(null);
   useEffect(() => {
-    const apiUrl = `https://jsonplaceholder.typicode.com/posts/${id}`
+    const apiUrl = `http://localhost:3000/posts`
     const data = axios.get(apiUrl)
       .then(response => {
         console.log(data, post);
-        setPost(response.data);
+        setPost(response.data[id-1]);
         // handle success
+        
       })
       .catch(function (error) {
         // handle error
         console.log(error);
-      });
+      }).finally(() => { setLoading(false); }
+    );
 
-  })
-
-  const [photo, setPhoto] = useState(null);
-  useEffect(() => {
-    const dataphotos = axios.get(`https://jsonplaceholder.typicode.com/photos/${id}`)
-      .then(response => {
-        console.log(dataphotos, photo);
-        setPhoto(response.data);
-        // handle success
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(() => { setLoading(false); }
-      );
   })
 
   return (
     <>
-      <div className='m-16 grid grid-cols-2'>
+      <div className='m-16 grid grid-cols-2 gap-x-5'>
         {loading ? <h1>Loading...</h1> :
         (post==null)?<h1>Invalid Post</h1>:
           <>
@@ -51,7 +37,7 @@ function Post() {
               </p>
             </div>
             <div>
-              <img src={photo.url} alt={photo.title} />
+              <img src={post.url} alt={post.title}/>
             </div>
           </>}
 
