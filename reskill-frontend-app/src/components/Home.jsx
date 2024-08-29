@@ -2,6 +2,7 @@
 import Posts from './Posts'
 import { useEffect,useState } from 'react'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -48,9 +49,9 @@ function Home() {
         </h4>
       </div>  
       <div className=' flex w-full  justify-center items-center ' >
-        <a target="_blank">
+        <NavLink to='/post/1' target="_blank">
           <img src={photos[0].url} className="" alt={photos[0].title}/>
-        </a>
+        </NavLink>
       </div>
       <div className=" flex w-full  justify-center items-center py-16">
         <p className='w-3/5 font-semibold'>
@@ -58,8 +59,14 @@ function Home() {
          </p>
       </div>
       <div className='grid grid-cols-2 gap-x-4	'>
+      <NavLink to='/post/2' target="_blank">
+
         <img src={photos[1].url}className=" mx-4" alt={photos[1].title} />
+        </NavLink>
+        <NavLink to='/post/2' target="_blank">
+
         <img src={photos[2].url} className="mx-4" alt={photos[2].title} />
+        </NavLink>
       </div>
 
       <div className='flex w-full py-16 justify-center items-center'>

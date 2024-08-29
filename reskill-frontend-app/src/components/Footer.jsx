@@ -3,6 +3,8 @@ import facebook from '../assets/facebookIcon.svg'
 import instagram from '../assets/instaIcon.svg'
 import linkedin from '../assets/linkedinIcon.svg'
 import youtube from '../assets/ytIcon.svg'
+import { NavLink } from 'react-router-dom'
+
 
 function Footer() {
 
@@ -33,40 +35,64 @@ function Footer() {
       </div>
       <div className='grid grid-cols-3 gap-4' >
         <div className='font-semibold ' >
-          Topic
+          <NavLink to='/red'> 
+            Red 
+          </NavLink>
         </div>
         <div className='font-semibold ' >
-          Topic
+        <NavLink to='/blue'> 
+            Blue 
+          </NavLink>
         </div>
         <div className='font-semibold' >
-          Topic
+        <NavLink to='/green'> 
+            Green 
+          </NavLink>
         </div>
         <div className=' ' >
-          Page
+        <NavLink to='/strawberry'> 
+            Strawberry 
+          </NavLink>
         </div>
         <div className=' ' >
-          Page
+        <NavLink to='/sea'> 
+            Sea 
+          </NavLink>
         </div>
         <div className=' ' >
-          Page
+        <NavLink to='/grass'> 
+            Grass 
+          </NavLink>
         </div>
         <div className=' ' >
-          Page
+        <NavLink to='/paprica'> 
+            Paprica 
+          </NavLink>
         </div>
         <div className=' ' >
-          Page
+        <NavLink to='/sky'> 
+            Sky 
+          </NavLink>
         </div>
         <div className=' ' >
-          Page
+        <NavLink to='/lettuce'> 
+            Lettuce 
+          </NavLink>
         </div>
         <div className=' ' >
-          Page
+        <NavLink to='/tomato'> 
+            Tomato 
+          </NavLink>
         </div>
         <div className=' ' >
-          Page
+        <NavLink to='/blue-cheese'> 
+        Blue-Cheese
+          </NavLink>
         </div>
-        <div className=' ' >
-          Page
+        <div className='' >
+        <NavLink to='/cactus'> 
+        Cactus 
+          </NavLink>
         </div>
       </div>
     </div>
