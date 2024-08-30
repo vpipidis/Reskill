@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 
 function Header() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -36,8 +34,9 @@ function Header() {
                     </NavLink></li>
                   <li>
 
-                    <button className='m-5' onClick={() => setCount((count) => count + 1)}>
-                      count is {count}
+                    <button className='m-5 bg-black text-white font-bold py-2 px-4 rounded' onClick={() => alert("Successfully Subscribed !   ")
+}>
+                      Subscribe
                     </button></li>
                 </ul></div>
             </div>

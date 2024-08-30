@@ -35,7 +35,7 @@ function Home() {
       </div>  
       <div className=' flex w-full  justify-center items-center ' >
         <NavLink to='/post/1' target="_blank">
-          <img src={posts[0].url} className="" alt={posts[0].title}/>
+          <img src={posts[0].url} className="  rounded-lg" alt={posts[0].title}/>
         </NavLink>
       </div>
       <div className=" flex w-full  justify-center items-center py-16">
@@ -46,11 +46,11 @@ function Home() {
       <div className='grid grid-cols-2 gap-x-4	'>
       <NavLink to='/post/2' target="_blank">
 
-        <img src={posts[1].url}className=" mx-4" alt={posts[1].title} />
+        <img src={posts[1].url}className=" mx-4  rounded-lg" alt={posts[1].title} />
         </NavLink>
         <NavLink to='/post/2' target="_blank">
 
-        <img src={posts[2].url} className="mx-4" alt={posts[2].title} />
+        <img src={posts[2].url} className="mx-4  rounded-lg" alt={posts[2].title} />
         </NavLink>
       </div>
 
@@ -70,7 +70,7 @@ function Home() {
       </div>
       <div>
         <div>
-          <h2 className='text-4xl font-bold'>Related Articles or posts</h2>
+          <h2 className='text-4xl font-bold py-4'>Related Articles or posts</h2>
           <Posts isHome={true} />
 
         </div>
